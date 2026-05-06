@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Youth Football Safety | Jack Collins</title>
+
+<style>
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+color:#1f2d3a;
+line-height:1.7;
+background:white;
+}
+
+a{
+text-decoration:none;
+}
+
+:root{
+--blue:#5da9e9;
+--blue2:#3d8ed6;
+--dark:#1d3557;
+--gray:#5d6b78;
+--light:#f4f9fe;
+--white:#fff;
+--border:#d8e9f7;
+}
+
+.topbar{
+background:#1d3557;
+color:white;
+padding:10px 7%;
+font-size:13px;
+display:flex;
+justify-content:space-between;
+}
+
+header{
+background:white;
+border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:10;
+}
+
+.nav{
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+.logo-box{
+background:var(--blue);
+color:white;
+font-weight:900;
+font-size:22px;
+padding:13px 17px;
+}
+
+.logo h2{
+margin:0;
+color:var(--dark);
+font-size:27px;
+}
+
+.links a{
+margin-left:24px;
+color:#222;
+font-weight:bold;
+font-size:15px;
+}
+
+.links a:hover{
+color:var(--blue2);
+}
+
+.hero{
+background:linear-gradient(135deg,#f4f9fe,#e6f3fc);
+padding:85px 7%;
+}
+
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+align-items:center;
+max-width:1300px;
+margin:auto;
+}
+
+.hero h1{
+font-size:64px;
+line-height:1.05;
+margin:0 0 25px;
+color:var(--dark);
+}
+
+.hero p{
+font-size:20px;
+color:var(--gray);
+margin-bottom:22px;
+}
+
+.btn{
+display:inline-block;
+background:var(--blue);
+color:white;
+padding:15px 24px;
+font-weight:900;
+margin-right:12px;
+margin-top:12px;
+}
+
+.btn.white{
+background:white;
+color:var(--dark);
+border:2px solid var(--blue);
+}
+
+.video-card{
+background:white;
+box-shadow:0 8px 28px rgba(0,0,0,.12);
+border:1px solid var(--border);
+}
+
+.video-card iframe{
+display:block;
+width:100%;
+height:390px;
+border:0;
+}
+
+.video-text{
+padding:25px;
+}
+
+.stats{
+background:var(--dark);
+color:white;
+padding:30px 7%;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+}
+
+.stat{
+border-left:4px solid var(--blue);
+padding-left:18px;
+}
+
+.stat strong{
+display:block;
+font-size:34px;
+line-height:1;
+margin-bottom:8px;
+}
+
+section{
+padding:90px 7%;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+.label{
+color:var(--blue2);
+font-size:14px;
+font-weight:900;
+text-transform:uppercase;
+letter-spacing:2px;
+margin-bottom:12px;
+}
+
+h2{
+font-size:50px;
+line-height:1.1;
+margin:0 0 22px;
+color:var(--dark);
+}
+
+h3{
+font-size:25px;
+margin:0 0 12px;
+color:var(--dark);
+}
+
+.lead{
+font-size:20px;
+color:var(--gray);
+}
+
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:55px;
+align-items:start;
+}
+
+.cards{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+}
+
+.card{
+background:white;
+border-top:6px solid var(--blue);
+padding:28px;
+box-shadow:0 6px 18px rgba(0,0,0,.06);
+border-left:1px solid var(--border);
+border-right:1px solid var(--border);
+border-bottom:1px solid var(--border);
+}
+
+.gray{
+background:var(--light);
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:35px;
+}
+
+.step{
+background:white;
+padding:32px;
+border-bottom:5px solid var(--blue);
+box-shadow:0 5px 16px rgba(0,0,0,.05);
+}
+
+.step span{
+color:var(--blue2);
+font-weight:900;
+}
+
+.quote{
+background:var(--dark);
+color:white;
+padding:45px;
+font-size:24px;
+font-weight:bold;
+border-left:12px solid var(--blue);
+}
+
+.solutions{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:24px;
+margin-top:35px;
+}
+
+.solution{
+background:white;
+padding:30px;
+border-left:6px solid var(--blue);
+box-shadow:0 5px 16px rgba(0,0,0,.05);
+}
+
+.cta{
+background:linear-gradient(135deg,#1d3557,#10263f);
+color:white;
+text-align:center;
+padding:95px 7%;
+}
+
+.cta h2{
+color:white;
+font-size:54px;
+}
+
+.cta p{
+max-width:850px;
+margin:0 auto 30px;
+font-size:21px;
+color:#eaf4fb;
+}
+
+.sources{
+background:#f7fbff;
+font-size:15px;
+}
+
+.source-box{
+background:white;
+padding:30px;
+border-top:6px solid var(--blue);
+box-shadow:0 5px 16px rgba(0,0,0,.05);
+}
+
+footer{
+background:#10263f;
+color:white;
+text-align:center;
+padding:28px;
+}
+
+@media(max-width:900px){
+
+.hero-grid,
+.stats,
+.split,
+.cards,
+.steps,
+.solutions{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:44px;
+}
+
+.links a{
+display:block;
+margin:8px 0;
+}
+
+.nav{
+display:block;
+}
+
+.video-card iframe{
+height:260px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+<span>Jack Collins | Youth Sports Safety</span>
+<span>CTE Awareness | Youth Football Reform | Safer Contact Rules</span>
+</div>
+
+<header>
+
+<div class="nav">
+
+<div class="logo">
+<div class="logo-box">JC</div>
+<h2>Youth Sports Safety</h2>
+</div>
+
+<div class="links">
+<a href="#video">Video</a>
+<a href="#risk">Risk</a>
+<a href="#youth">Youth Football</a>
+<a href="#solutions">Solutions</a>
+<a href="#sources">Sources</a>
+</div>
+
+</div>
+</header>
+
+<section class="hero" id="video">
+
+<div class="hero-grid">
+
+<div>
+
+<div class="label">
+Youth Sports Safety Awareness
+</div>
+
+<h1>
+Protect Young Athletes Before Permanent Damage Begins
+</h1>
+
+<p>
+Football is one of the most important sports in American culture, but repeated head impacts in youth tackle football raise serious concerns about long-term brain health.
+</p>
+
+<p>
+Research on Chronic Traumatic Encephalopathy, or CTE, shows that repeated head trauma can affect memory, behavior, mood, and brain function later in life. Youth leagues should reduce unnecessary contact before young athletes face years of repeated exposure.
+</p>
+
+<a class="btn" href="#solutions">
+Explore Solutions
+</a>
+
+<a class="btn white" href="#risk">
+Learn the Risk
+</a>
+
+</div>
+
+<div class="video-card">
+
+<iframe
+src="https://www.youtube.com/embed/d9Vlc7kBUW8?rel=0"
+title="Prime of Life: A Family's Story"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+<div class="video-text">
+
+<h3>
+Prime of Life: A Family’s Story
+</h3>
+
+<p>
+This documentary focuses on the effects of CTE and repeated head trauma through the perspective of a family dealing with the long-term consequences of football-related brain injury.
+</p>
+
+<a class="btn"
+target="_blank"
+href="https://www.youtube.com/watch?v=d9Vlc7kBUW8">
+Watch on YouTube
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<strong>177/202</strong>
+<span>Former football players in a JAMA study were diagnosed with CTE after death.</span>
+</div>
+
+<div class="stat">
+<strong>15x</strong>
+<span>Youth tackle football players experienced far more head impacts than flag players in CDC research.</span>
+</div>
+
+<div class="stat">
+<strong>23x</strong>
+<span>Tackle players had far more high-magnitude head impacts than flag football players.</span>
+</div>
+
+<div class="stat">
+<strong>1 Goal</strong>
+<span>Reduce unnecessary contact while keeping the positive parts of football.</span>
+</div>
+
+</section>
+
+<section id="risk">
+
+<div class="container split">
+
+<div>
+
+<div class="label">
+The Problem
+</div>
+
+<h2>
+Repeated head impacts can create long-term danger.
+</h2>
+
+<p class="lead">
+CTE is a degenerative brain disease associated with repeated head trauma. Football is especially concerning because players can experience repeated hits during games and practices, even when those hits do not immediately look serious.
+</p>
+
+<p>
+The problem is not only one major concussion. Many smaller impacts over time may still raise concerns about memory, emotional control, behavior, and long-term brain health.
+</p>
+
+<p>
+Researchers such as Bennet Omalu, Ann McKee, and Jesse Mez helped change the national conversation around football safety. Their work pushed people to ask not whether football is dangerous, but what should be done to make it safer.
+</p>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>CTE affects the brain</h3>
+<p>
+CTE has been associated with changes in memory, mood, behavior, and thinking. It is connected to repeated trauma rather than only one single injury.
+</p>
+</div>
+
+<div class="card">
+<h3>Helmets are not enough</h3>
+<p>
+Helmets can reduce some injuries, but they cannot fully stop the brain from moving inside the skull during impact.
+</p>
+</div>
+
+<div class="card">
+<h3>Youth players are vulnerable</h3>
+<p>
+Children are still developing physically and neurologically, which makes repeated contact especially concerning.
+</p>
+</div>
+
+<div class="card">
+<h3>Families need clear information</h3>
+<p>
+Parents should be able to make decisions based on research, not tradition, pressure, or the belief that equipment solves everything.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="gray" id="youth">
+
+<div class="container">
+
+<div class="label">
+Why Youth Football Matters
+</div>
+
+<h2>
+The earlier contact starts, the longer the exposure can last.
+</h2>
+
+<p class="lead">
+Youth football is the most important place to focus because children may not fully understand the long-term consequences of repeated head impacts. Limiting contact at younger ages allows athletes to enjoy football while reducing unnecessary risk.
+</p>
+
+<div class="steps">
+
+<div class="step">
+<span>01</span>
+<h3>Reduce Contact Practices</h3>
+<p>
+Practices should focus more on conditioning, footwork, passing, catching, blocking technique, and safe fundamentals instead of frequent full-contact drills.
+</p>
+</div>
+
+<div class="step">
+<span>02</span>
+<h3>Delay Tackling</h3>
+<p>
+Flag football gives younger players a safer way to learn the sport before being exposed to repeated tackling and collisions.
+</p>
+</div>
+
+<div class="step">
+<span>03</span>
+<h3>Set League Rules</h3>
+<p>
+Safety should not depend only on one coach. Youth leagues should create clear contact limits that apply to every team.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section>
+
+<div class="container split">
+
+<div>
+
+<div class="label">
+Counterargument
+</div>
+
+<h2>
+Football can continue, but it cannot stay exactly the same.
+</h2>
+
+<p class="lead">
+Some people argue that football is too culturally important to change. Football does build community, create opportunities, and bring people together. Those benefits matter.
+</p>
+
+<p>
+However, acknowledging football’s value does not mean ignoring its risks. A sport can be meaningful and still need stronger safety rules.
+</p>
+
+<p>
+Others argue that better helmets and concussion protocols are enough. Those changes help, but they do not fully address repeated impacts that happen throughout practices and games.
+</p>
+
+</div>
+
+<div class="quote">
+Youth football should adopt stronger contact limits because reducing repeated head impacts protects children while still allowing football to continue in a safer form.
+</div>
+
+</div>
+</section>
+
+<section class="gray" id="solutions">
+
+<div class="container">
+
+<div class="label">
+Solutions
+</div>
+
+<h2>
+Practical changes can protect young athletes.
+</h2>
+
+<p class="lead">
+The goal is not to ban football. The goal is to reduce preventable risk, especially for children who are still developing and may not fully understand the long-term consequences.
+</p>
+
+<div class="solutions">
+
+<div class="solution">
+<h3>Limit Full-Contact Practices</h3>
+<p>
+Youth leagues should set weekly limits on tackling and collision drills. This reduces unnecessary head impacts outside of games.
+</p>
+</div>
+
+<div class="solution">
+<h3>Expand Flag Football</h3>
+<p>
+Flag football should be easier to access for younger athletes so they can learn the game without repeated contact.
+</p>
+</div>
+
+<div class="solution">
+<h3>Improve Concussion Education</h3>
+<p>
+Parents, coaches, and athletes should know concussion symptoms and understand why hiding injuries can be dangerous.
+</p>
+</div>
+
+<div class="solution">
+<h3>Track Head Injuries</h3>
+<p>
+Youth leagues should document concussions and suspected head injuries so safety decisions are based on real evidence.
+</p>
+</div>
+
+<div class="solution">
+<h3>Delay Tackle Football</h3>
+<p>
+Leagues should consider delaying tackle football until athletes are older and better able to understand risk.
+</p>
+</div>
+
+<div class="solution">
+<h3>Enforce Safer Rules</h3>
+<p>
+Rules against dangerous head-first contact should be enforced consistently at every level of youth football.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="cta">
+
+<h2>
+Support Contact Limits in Youth Football
+</h2>
+
+<p>
+Parents, coaches, schools, and league leaders can help protect young athletes by reducing repeated head impacts, supporting flag football, and demanding stronger safety regulations.
+</p>
+
+<a class="btn" href="#sources">
+Read the Research
+</a>
+
+</section>
+
+<section class="sources" id="sources">
+
+<div class="container">
+
+<div class="label">
+Sources
+</div>
+
+<h2>
+Works Cited and Research
+</h2>
+
+<div class="source-box">
+
+<p>
+Brenner, Joel S., et al. “Tackling in Youth Football.” <em>Pediatrics</em>, vol. 136, no. 5, 2015.
+</p>
+
+<p>
+Centers for Disease Control and Prevention. “Comparing Head Impacts in Youth Tackle and Flag Football.”
+</p>
+
+<p>
+Centers for Disease Control and Prevention. “HEADS UP: Preventing Concussion.”
+</p>
+
+<p>
+McKee, Ann C., et al. “Chronic Traumatic Encephalopathy in Athletes: Progressive Tauopathy after Repetitive Head Injury.”
+</p>
+
+<p>
+Mez, Jesse, et al. “Evaluation of Chronic Traumatic Encephalopathy in Players of American Football.” <em>JAMA</em>.
+</p>
+
+<p>
+Omalu, Bennet I., et al. “Chronic Traumatic Encephalopathy in a National Football League Player.”
+</p>
+
+<p>
+Schwarz, Alan. “How the NFL Tried to Influence Concussion Research.”
+</p>
+
+<p>
+Video: “Prime of Life: A Family’s Story.” YouTube.
+</p>
+
+</div>
+</div>
+</section>
+
+<footer>
+Youth Sports Safety | Jack Collins | Support Contact Limits in Youth Football
+</footer>
+
+</body>
+</html>
